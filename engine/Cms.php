@@ -24,7 +24,6 @@ class Cms
      */
     public function run()
     {
-        $ss = $this->di->getContainer('test234');
-        echo print_r($ss);
+        
     }
 }
