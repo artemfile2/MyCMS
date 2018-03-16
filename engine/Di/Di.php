@@ -1,6 +1,6 @@
 <?php
 
-namespace engine\Di;
+namespace engine\DI;
 
 class Di
 {
@@ -36,6 +36,6 @@ class Di
      */
     public function hasContainer($key)
     {
-        return $this->container[$key];
+        return $this->container[$key] ?? null;
     }
 }
