@@ -7,7 +7,6 @@ use Engine\Core\Database\Connect;
 
 class Provider extends AbstractProvider
 {
-
     /**
      * @var string
      */

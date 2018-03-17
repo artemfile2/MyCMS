@@ -1,15 +1,24 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Qwerty
- * Date: 17.03.2018
- * Time: 19:58
- */
 
 namespace Engine\Service\Router;
 
+use Engine\Service\AbstractProvider;
+use Engine\Core\Router\Router;
 
-class Provider
+class Provider extends AbstractProvider
 {
+    /**
+     * @var string
+     */
+    public $serviceName = 'router';
 
+    /**
+     * @return mixed
+     */
+    public function init()
+    {
+        $router = new Router('http://mycms/');
+
+        $this->di->setContainer($this->serviceName, $router);
+    }
 }
