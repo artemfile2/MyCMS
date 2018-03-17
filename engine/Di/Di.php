@@ -1,6 +1,6 @@
 <?php
 
-namespace engine\Di;
+namespace Engine\Di;
 
 class Di
 {

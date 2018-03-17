@@ -1,7 +1,6 @@
 <?php
 
-namespace engine;
-
+namespace Engine;
 
 class Cms
 {
@@ -24,6 +23,6 @@ class Cms
      */
     public function run()
     {
-        
+        echo var_dump($this->di);
     }
 }
