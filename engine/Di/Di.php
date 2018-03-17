@@ -1,12 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Qwerty
- * Date: 14.03.2018
- * Time: 7:37
- */
 
-namespace engine\Di;
+namespace Engine\Di;
 
 class Di
 {
@@ -42,6 +36,6 @@ class Di
      */
     public function hasContainer($key)
     {
-        return $this->container[$key];
+        return $this->container[$key] ?? null;
     }
 }
