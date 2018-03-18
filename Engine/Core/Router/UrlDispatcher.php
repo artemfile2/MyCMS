@@ -43,7 +43,7 @@ class UrlDispatcher
      * @param $uri
      * @return DispatchedRoute|void
      */
-    public function dispatch($method, $uri)
+    public function UriDispatch($method, $uri)
     {
         $routes = $this->routes(strtoupper($method));
 

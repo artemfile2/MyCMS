@@ -39,7 +39,7 @@ class Router
      */
     public function dispatch($method, $uri)
     {
-        return $this->getDispatch()->dispatch($method, $uri);
+        return $this->getDispatch()->UriDispatch($method, $uri);
     }
 
     /**

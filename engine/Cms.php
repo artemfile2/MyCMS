@@ -29,13 +29,17 @@ class Cms
     public function run()
     {
         $this->router->add('home', '/', 'HomeController:index');
-        $this->router->add('product', '/product/12', 'ProductController:index');
+        $this->router->add('product', '/product/12', 'HomeController:product');
 
         $routerDispatch = $this->router
             ->Dispatch(Common::getMethod(), Common::getPathUrl());
 
-        //echo var_dump($this->di);
-        echo '<br>';
-        echo print_r($routerDispatch);
+        list($class, $action) =
+            explode(':', $routerDispatch->getController(), 2);
+
+        $controller = '\\Cms\\Controller\\' . $class;
+        call_user_func_array(
+            [new $controller($this->di), $action],
+            $routerDispatch->getParameters());
     }
 }
