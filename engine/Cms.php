@@ -30,9 +30,7 @@ class Cms
     public function run()
     {
         try {
-            $this->router->add('home', '/', 'HomeController:index');
-            $this->router->add('product', '/product/12', 'HomeController:product');
-            $this->router->add('product_alias', '/product/all/(id:int)', 'ProductController:products');
+            require_once __DIR__ . '/../' . ENV . '/Routes.php';
 
             $routerDispatch = $this->router
                 ->Dispatch(Common::getMethod(), Common::getPathUrl());
@@ -44,7 +42,7 @@ class Cms
             list($class, $action) =
                 explode(':', $routerDispatch->getController(), 2);
 
-            $controller = '\\Cms\\Controller\\' . $class;
+            $controller = '\\' . ENV . '\\Controller\\' . $class;
             $parameters = $routerDispatch->getParameters();
             call_user_func_array(
                 [new $controller($this->di), $action], $parameters);
