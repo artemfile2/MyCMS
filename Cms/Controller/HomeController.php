@@ -6,7 +6,8 @@ class HomeController extends CmsController
 {
     public function index()
     {
-        echo 'index page';
+        $foo = ['name'=>'Artem', 'country'=>'Russia'];
+        $this->view->render('index', $foo);
     }
 
     public function product()

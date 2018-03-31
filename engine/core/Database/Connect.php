@@ -52,7 +52,13 @@ class Connect
      */
     private function getConfig()
     {
-        include_once 'config.php';
+        if (ENV === 'Cms'){
+            include_once 'config.php';
+        }
+        else{
+            include_once '../config.php';
+        }
+
         $this->host = $conf['host'];
         $this->dbname = $conf['dbname'];
         $this->dbuser = $conf['dbuser'];
